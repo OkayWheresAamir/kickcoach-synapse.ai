@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synapse | Elite AI Coaching</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body class="pb-24">
+
+    <header class="hidden md:flex justify-between items-center p-8 max-w-7xl mx-auto">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-[#ccff00] rounded-xl flex items-center justify-center rotate-3">
+                <i class="fas fa-bolt text-black"></i>
+            </div>
+            <span class="text-2xl font-bold tracking-tighter">KICK<span class="text-[var(--neon-lime)]">COACH</span></span>
+        </div>
+        <nav class="flex gap-8 items-center">
+            <a href="#" class="hover:text-[var(--neon-lime)] transition">Analyze</a>
+            <a href="#" class="hover:text-[var(--neon-lime)] transition">Drills</a>
+            <button class="bg-white text-black px-6 py-2 rounded-full font-bold hover:bg-[var(--neon-lime)] transition">LOGIN</button>
+        </nav>
+    </header>
+
+    <div class="md:hidden flex justify-between items-center p-6">
+        <span class="text-xl font-bold tracking-tighter">KICK<span class="text-[var(--neon-lime)]">COACH</span></span>
+        <div class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center">
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-6 space-y-8">
+        
+        <!-- <div class="grid grid-cols-1 lg:grid-cols-12 gap-6"> -->
+        <div class="flex justify-center gap-6">
+            
+            <div class="lg:col-span-4 glass-card p-8 rounded-[2rem] border-dashed border-2 border-gray-700 hover:border-[var(--neon-lime)] transition group relative overflow-hidden">
+                <input type="file" id="videoUpload" class="hidden">
+                <label for="videoUpload" class="cursor-pointer flex flex-col h-full justify-between">
+                    <div>
+                        <h2 class="text-2xl font-bold mb-1">New Session</h2>
+                        <p class="text-gray-500 text-sm">Upload match or training footage</p>
+                    </div>
+                    <div id="previewContainer" class="my-8 flex items-center justify-center py-10">
+                        <div class="text-center group-hover:scale-110 transition duration-500">
+                            <i id="uploadIcon" class="fas fa-plus text-5xl text-[var(--neon-lime)] mb-4"></i>
+                            <video id="videoPreview" class="hidden rounded-2xl w-full max-h-48 object-cover shadow-2xl" controls></video>
+                        </div>
+                    </div>
+                    <div class="bg-[var(--neon-lime)] text-black font-bold p-4 rounded-2xl text-center">
+                        <!-- START ANALYZING -->
+                        Video Uploaded✔️
+                    </div>
+                </label>
+            </div>
+
+            <div class="lg:col-span-5 glass-card p-6 rounded-[2rem] relative overflow-hidden group">
+                <div class="flex justify-between items-start mb-4">
+                    <h2 class="text-sm font-bold uppercase tracking-widest text-[var(--cyber-pink)]">Biomechanics</h2>
+                    <span class="bg-black/50 px-3 py-1 rounded-full text-[10px] font-mono">FRAME: 042/IMPACT</span>
+                </div>
+                <div class="relative h-64 bg-black/60 rounded-2xl ">
+                    <div class="absolute inset-0 opacity-40 bg-contain">
+                        <img src="lean angle.png">
+                    </div>
+
+                    <div class="absolute bottom-4 left-4 right-4 flex justify-between">
+                        <div class="bg-black/80 backdrop-blur p-2 rounded-lg border border-white/10">
+                            <p class="text-[10px] text-gray-400">Lean Angle</p>
+                            <p class="text-lg font-bold">31°</p>
+                        </div>
+                        <div class="bg-black/80 backdrop-blur p-2 rounded-lg border border-white/10">
+                            <p class="text-[10px] text-gray-400">Knee Flex</p>
+                            <p class="text-lg font-bold text-[var(--neon-lime)]">177°</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+            <div class="lg:col-span-3 flex gap-6">
+                <div class="bg-[var(--neon-lime)] p-6 rounded-[2rem] text-black">
+                    <p class="font-bold text-sm uppercase">Stability Score</p>
+                    <div class="flex items-end justify-between mt-2">
+                        <span class="text-5xl font-black">75</span>
+                        <span class="font-bold pb-2">/100</span>
+                    </div>
+                    <div class="w-full bg-black/10 h-1.5 mt-4 rounded-full">
+                        <div class="bg-black h-full rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-[2rem]">
+                    <p class="text-gray-400 text-sm">AI Feedback</p>
+                    <p class="mt-2 text-xl leading-relaxed">
+                        "Lean back less - <span class="text-[var(--cyber-pink)] font-bold">31° too much</span>. Try leaning slightly forward for better control. Bend your kicking knee a bit - 177° is almost locked; a small bend adds power and reduces strain."
+                    </p>
+                </div>
+            </div>
+            <section class="space-y-4">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold">Prescribed Drills</h2>
+                    <a href="#" class="text-[var(--neon-lime)] text-sm font-bold">View All</a>
+            </div>
+            <div class="flex md:grid md:grid-cols-4 gap-4 overflow-x-auto pb-4 no-scrollbar">
+                <div class="min-w-[280px] glass-card rounded-3xl overflow-hidden group hover:neon-border transition cursor-pointer">
+                    <div class="h-40 bg-gray-800 relative">
+                        <img src="https://images.unsplash.com/photo-1518604666860-9ed391f76460?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <span class="absolute bottom-3 left-3 bg-white/10 backdrop-blur px-2 py-1 rounded text-[10px]">10 MINS</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold">Agility Ladder X</h3>
+                        <p class="text-xs text-gray-500 mt-1">Improves rapid foot placement.</p>
+                    </div>
+                </div>
+                <div class="min-w-[280px] glass-card rounded-3xl overflow-hidden group">
+                     <div class="h-40 bg-gray-800 relative">
+                        <img src="cone.jpg" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <span class="absolute bottom-3 left-3 bg-white/10 backdrop-blur px-2 py-1 rounded text-[10px]">15 MINS</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold">Cone Drills</h3>
+                        <p class="text-xs text-gray-500 mt-1">Fixing trunk lean alignment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 bottom-nav px-8 py-4 flex justify-between items-center z-50">
+        <div class="flex flex-col items-center text-[var(--neon-lime)]">
+            <i class="fas fa-home text-xl"></i>
+            <span class="text-[10px] mt-1">Home</span>
+        </div>
+        <div class="flex flex-col items-center text-gray-500">
+            <i class="fas fa-chart-bar text-xl"></i>
+            <span class="text-[10px] mt-1">Analysis</span>
+        </div>
+        <div class="relative -top-8 w-14 h-14 bg-[var(--neon-lime)] rounded-full flex items-center justify-center text-black shadow-[0_0_20px_rgba(204,255,0,0.4)]">
+            <i class="fas fa-plus text-xl"></i>
+        </div>
+        <div class="flex flex-col items-center text-gray-500">
+            <i class="fas fa-dumbbell text-xl"></i>
+            <span class="text-[10px] mt-1">Drills</span>
+        </div>
+        <div class="flex flex-col items-center text-gray-500">
+            <i class="fas fa-cog text-xl"></i>
+            <span class="text-[10px] mt-1">Settings</span>
+        </div>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,46 @@
+   @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+
+   :root {
+     --pitch-dark: #04160e;
+     --neon-lime: #ccff00;
+     --cyber-pink: #ff007a;
+   }
+
+   body {
+     background-color: var(--pitch-dark);
+     font-family: 'Space Grotesk', sans-serif;
+     color: #e2e8f0;
+     background-image: radial-gradient(circle at 10% 20%, rgba(20, 50, 30, 0.4) 0%, transparent 50%);
+   }
+
+   .glass-card {
+     background: rgba(255, 255, 255, 0.03);
+     backdrop-filter: blur(12px);
+     border: 1px solid rgba(255, 255, 255, 0.08);
+     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+   }
+
+   .neon-border {
+     border: 1px solid var(--neon-lime);
+     box-shadow: 0 0 15px rgba(204, 255, 0, 0.2);
+   }
+
+   .bottom-nav {
+     background: rgba(4, 22, 14, 0.8);
+     backdrop-filter: blur(20px);
+     border-top: 1px solid rgba(255, 255, 255, 0.1);
+   }
+
+   /* Smooth scrollbar for better feel */
+   ::-webkit-scrollbar {
+     width: 5px;
+   }
+
+   ::-webkit-scrollbar-track {
+     background: var(--pitch-dark);
+   }
+
+   ::-webkit-scrollbar-thumb {
+     background: #1a3a2a;
+     border-radius: 10px;
+   }
