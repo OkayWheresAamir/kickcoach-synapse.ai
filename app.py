@@ -302,7 +302,16 @@ class MaxSizeMiddleware(BaseHTTPMiddleware):
 #-------------
 # FastAPI app
 #-------------
+
+from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI(title="KickCoach")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 app.add_middleware(MaxSizeMiddleware, max_body=MAX_UPLOAD_BYTES)
 
 @app.get("/health")
